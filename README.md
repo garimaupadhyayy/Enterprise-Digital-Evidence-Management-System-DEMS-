@@ -96,14 +96,6 @@ SHOW FUNCTION STATUS WHERE Db = 'dems_db';       -- expect 4
 See [`11_testing_phase15.md`](./11_testing_phase15.md) for 13 test scenarios covering constraint violations, trigger behavior, procedure business rules, and transaction rollback integrity — each with the exact expected error code/output.
 
 
-## 🚀 Future Improvements
-
-- REST API layer on top of the stored procedures (no raw DML from the app layer)
-- Full-text/fuzzy search on suspect names and evidence descriptions
-- Inter-agency (cross-organization) evidence sharing protocol
-- Automated CI test suite running all Phase 15 scenarios on every schema change
-- Object storage integration (S3 + WORM lock) for actual evidence files, referenced by `file_hash`
-
 ## 👤 Author
 
 Built as a final-year database engineering / cybersecurity portfolio project.
