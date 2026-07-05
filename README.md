@@ -1,12 +1,10 @@
-# 🔐 Enterprise Digital Evidence Management System (DEMS)
+# Enterprise Digital Evidence Management System (DEMS)  🔐 
 
 A fully normalized **MySQL 8.0** relational database for managing cybercrime investigation cases, digital evidence, chain of custody, and audit compliance across a multi-department Cyber Crime Investigation Unit.
 
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-
----
 
 ## 📖 About
 
@@ -19,7 +17,6 @@ Built as a final-year database engineering project demonstrating:
 - Role-based database security (least privilege)
 - 30+ advanced SQL queries (joins, CTEs, window functions)
 
----
 
 ## 🗂️ Project Structure
 
@@ -42,8 +39,6 @@ dems/
     └── project_intro.md              # Phase 1-4: overview, ER design, schema docs
 ```
 
----
-
 ## 🏗️ Entity Overview
 
 18 tables across 4 categories:
@@ -60,8 +55,8 @@ dems/
 ## ⚙️ Setup & Installation
 
 ### Prerequisites
-- MySQL **8.0+** (uses CHECK constraints and window functions — will not work on 5.7)
-- MySQL client (Workbench, CLI, or DBeaver)
+- MySQL **8.0+** 
+- MySQL client
 
 ### Run in order:
 
@@ -87,7 +82,6 @@ SHOW PROCEDURE STATUS WHERE Db = 'dems_db';      -- expect 6
 SHOW FUNCTION STATUS WHERE Db = 'dems_db';       -- expect 4
 ```
 
----
 
 ## 🧠 Key Design Highlights
 
@@ -96,13 +90,11 @@ SHOW FUNCTION STATUS WHERE Db = 'dems_db';       -- expect 4
 - **Least-privilege roles** — investigators have no direct write access to evidence tables; all writes are forced through validated stored procedures.
 - **Multi-department case sharing** — junction tables (`case_departments`, `case_investigators`, `case_suspects`) model the real-world reality that cases span more than one team.
 
----
 
 ## 🧪 Testing
 
 See [`11_testing_phase15.md`](./11_testing_phase15.md) for 13 test scenarios covering constraint violations, trigger behavior, procedure business rules, and transaction rollback integrity — each with the exact expected error code/output.
 
----
 
 ## 🚀 Future Improvements
 
@@ -111,14 +103,6 @@ See [`11_testing_phase15.md`](./11_testing_phase15.md) for 13 test scenarios cov
 - Inter-agency (cross-organization) evidence sharing protocol
 - Automated CI test suite running all Phase 15 scenarios on every schema change
 - Object storage integration (S3 + WORM lock) for actual evidence files, referenced by `file_hash`
-
----
-
-## 📄 License
-
-This project is open for educational and portfolio use. Add a `LICENSE` file (MIT recommended) if you want to make reuse terms explicit.
-
----
 
 ## 👤 Author
 
